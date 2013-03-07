@@ -1,0 +1,30 @@
+                   books GET    /books(.:format)                    books#index
+                         POST   /books(.:format)                    books#create
+                new_book GET    /books/new(.:format)                books#new
+               edit_book GET    /books/:id/edit(.:format)           books#edit
+                    book GET    /books/:id(.:format)                books#show
+                         PUT    /books/:id(.:format)                books#update
+                         DELETE /books/:id(.:format)                books#destroy
+                   users GET    /users(.:format)                    users#index
+                         POST   /users(.:format)                    users#create
+                new_user GET    /users/new(.:format)                users#new
+               edit_user GET    /users/:id/edit(.:format)           users#edit
+                    user GET    /users/:id(.:format)                users#show
+                         PUT    /users/:id(.:format)                users#update
+                         DELETE /users/:id(.:format)                users#destroy
+                sessions GET    /sessions(.:format)                 sessions#index
+                         POST   /sessions(.:format)                 sessions#create
+             new_session GET    /sessions/new(.:format)             sessions#new
+            edit_session GET    /sessions/:id/edit(.:format)        sessions#edit
+                 session GET    /sessions/:id(.:format)             sessions#show
+                         PUT    /sessions/:id(.:format)             sessions#update
+                         DELETE /sessions/:id(.:format)             sessions#destroy
+     library_admin_index GET    /library_admin/index(.:format)      library_admin#index
+library_admin_categories GET    /library_admin/categories(.:format) library_admin#categories
+  library_admin_about_us GET    /library_admin/about_us(.:format)   library_admin#about_us
+   library_admin_carrers GET    /library_admin/carrers(.:format)    library_admin#carrers
+library_admin_conatct_us GET    /library_admin/conatct_us(.:format) library_admin#conatct_us
+                 log_out GET    /log_out(.:format)                  sessions#destroy
+                  log_in GET    /log_in(.:format)                   sessions#new
+                 sign_up GET    /sign_up(.:format)                  users#new
+                    root        /                                   library_admin#index

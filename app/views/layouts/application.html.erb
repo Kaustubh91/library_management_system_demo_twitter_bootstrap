@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Green Pasture by FCT</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <title>LibraryManagementSystemDemo</title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+  </head>
+  <body>
+    
+    <div id="header-wrapper">
+      <div id="header">
+        <div id="logo">
+          <h1><a href="#"><%= image_tag("My_library_logo.png", :alt => "rss feed", :width =>"50",:height =>"50") %></a><a href="#">My Library</a></h1>
+          
+        </div>
+        
+        <div id="menu">
+          <ul>
+            <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+            
+            <li class="current_page_item"><%= link_to 'Categories', library_admin_categories_path %> </li>
+            <li class="current_page_item"><%= link_to 'About Us', library_admin_about_us_path %> </li>
+            <li class="current_page_item"><%= link_to 'Careers', library_admin_carrers_path %> </li>
+            <li class="current_page_item"><%= link_to 'Contact Us', library_admin_conatct_us_path %> </li>
+  <% if current_user %>
+   <li class="current_page_item"> <%= link_to "Log out", log_out_path %></li>
+            <li class="current_page_item"> <font color="white">Logged in as <%= current_user.email %></font></li>
+  <% else %>
+    <li class="current_page_item"> <%= link_to "Sign up", sign_up_path %> or</li>
+    <li class="current_page_item"> <%= link_to "log in", log_in_path %></li>
+  <% end %>
+</div>           
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="banner">
+      <div class="img-border"> <%= image_tag("library-wallpaper.png", :alt => "rss feed", :width =>"1200",:height =>"50") %></div>
+    </div>
+    <div id="wrapper">
+      <div id="page-wrapper">
+        <div id="page">
+          <div id="wide-content">
+            <div>
+              <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+<%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="page" class="container">
+        <div id="content">
+          <div>
+            <ul class="style1">
+              <li class="first">
+                
+                <br />                          
+              </li>         
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="container">
+      <p>Copyright (c) 2012 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+    </div>
+  </body>
+</html>

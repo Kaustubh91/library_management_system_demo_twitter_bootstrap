@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Green Pasture by FCT</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <!--[if IE 6]>
+    <link href="default_ie6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+  </head>
+  <body>
+    <div>
+      <%#= link_to 'img src="assests/drama-cover.png" height="100" width="200"',books_path %>
+      
+      <%=  link_to( image_tag("drama_cover.png", :style => "width:200px;height:200px"), books_path(:book_genre => "drama") )%>
+      <%=  link_to( image_tag("fiction_cover.png", :style => "width:200px;height:200px"), books_path(:book_genre => "fiction") )%>
+      <%=  link_to( image_tag("mystery_cover.png", :style => "width:200px;height:200px"), books_path(:book_genre => "mystery") )%>
+      <%=  link_to( image_tag("literature_cover.png", :style => "width:200px;height:200px"), books_path(:book_genre => "literature") )%>
+      <%=  link_to( image_tag("biography_cover.png", :style => "width:200px;height:200px"), books_path(:book_genre => "biography") )%>
+    </div>
+  </body>
+</html>

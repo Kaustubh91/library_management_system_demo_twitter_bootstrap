@@ -1,0 +1,9 @@
+<%- model_class = Book -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human %></h1>
+</div>
+
+<% @temp = params[:book_genre] %>
+<% @button = "create" %>
+<%= render :partial => 'form', :locals => { :book_genre => @temp }, :object => @button %>
+<%#= render :partial => 'form' %>
